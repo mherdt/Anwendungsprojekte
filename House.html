@@ -24,6 +24,16 @@
 .medium {
   background-color: white;
 }
+
+  #canvasCol {
+            text-align: center;
+        }
+
+#canvas {
+            border: 1px solid #000000;
+            width: 100%;
+            max-width: 800px;
+        }
 </style>
 
 <body>
@@ -41,16 +51,21 @@
         <li><a href="Contact.html">Contact</a></li>
         <li><a href="Calculator.html">Calculator</a></li>
         <li class="active"><a href="House.html">House</a></li>
+        <li><a href="About.html">About us</a></li>
       </ul>
     </div>
   </nav>
   <div>
-  <section class="container" style="max-width:1140px">
-  <h2 class="wide">HTML 5 Canvas</h2>
-  <p class="opacity"><i>My house before a black hole will hfisuladfhdisufhsdaufhi it.</i></p>
-  <div id="canvasCol" class="col">
-    <canvas id="canvas" width="1000" height="1000"></canvas>
-  </div>
-</section>
+<div class="container">
+    <h2 class="wide">HTML 5 Canvas</h2>
+            <div class="col">
+              <p class="opacity"><i>My house before a black hole will hfisuladfhdisufhsdaufhi it.</i></p>
+            </div>
+        <div class="row">
+            <div id="canvasCol" class="col">
+                <canvas id="canvas" width="1000" height="1000"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
 </html>

@@ -6,11 +6,11 @@
   <title>Anwendungsprojekte</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/calculator.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <script src="js/clock.js"></script>
+  <script src="js/clock.js"></script>
   <link rel="icon" href="Logo.png">
 </head>
 
@@ -36,7 +36,8 @@
   .medium {
     background-color: white;
   }
-    #clockCol {
+
+  #clockCol {
     text-align: right;
   }
 
@@ -50,34 +51,34 @@
     border-radius: 10px;
   }
 
-    #logo {
-      height:50px;
+  #logo {
+    height: 50px;
     padding-left: 5px;
     padding-right: 10px;
   }
 </style>
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-      <ul class="nav navbar-nav">
-        <li><img id="logo" src="Logo.png" alt="Black Hole"></li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="hawking.html">Hawking</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="active"><a href="calculator.html">Komplex</a></li>
-        <li><a href="factorial.html">Fakultät</a></li>
-        <li><a href="canvas.html">Canvas</a></li>
-        <li><a href="about.html">About us</a></li>
-      </ul>
-      <div id="clockCol" class="col">
-        <div id="clock">
-          <span id="hours">00</span><span>:</span><span id="minutes">00</span>
-        </div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><img id="logo" src="Logo.png" alt="Black Hole"></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="hawking.html">Hawking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="active"><a href="calculator.html">Komplex</a></li>
+      <li><a href="factorial.html">Fakultät</a></li>
+      <li><a href="canvas.html">Canvas</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+    <div id="clockCol" class="col">
+      <div id="clock">
+        <span id="hours">00</span><span>:</span><span id="minutes">00</span>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <body background="background.jpg" ng-controller="myCtrl">
 

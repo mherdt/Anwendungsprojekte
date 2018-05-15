@@ -1,40 +1,41 @@
 <html>
 <meta charset="UTF-8">
+
 <head>
 
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="icon" href="Logo.png">
+  <title>Anwendungsprjekte</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="js/calculator.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="icon" href="Logo.png">
 </head>
 
 <style>
-.mySlides {
+  #map {
 
-   display: block;
-   margin: 0px auto;
-   width: 100px;
+    height: 30%;
   }
 
-.container {
-  background-color: white;
-}
-.medium {
-  background-color: white;
-}
+  .mySlides {
+
+    display: block;
+    margin: 0px auto;
+    width: 100px;
+  }
+
+  .container {
+    width: 80%;
+    background-color: white;
+
+  }
+
+  .medium {
+    background-color: white;
+  }
 </style>
-
-<body>
-
-  <body background="background.jpg" >
-
-<!-- Navigation -->
-
-<body>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -51,5 +52,52 @@
     </ul>
   </div>
 </nav>
+
+<body background="background.jpg">
+  <div class="container">
+    <div class="form-group row">
+      <div class="col-md-6">
+        <h1>Rechnen mit komplexen Zahlen</h1>
+        <span>(Zahlen müssen in diesem Format angegeben werden: 7+15i)
+          </div>
+      </div>
+    </div>
+    <div id = "map" class="container">
+      <div class="form-group row">
+          <div class="col-xs-2">
+              <label for="n1">Gebe erste Zahl ein</label>
+              <input type="text" id="n1" class="form-control"/>
+          </div>
+          <div class="col-xs-2">
+              <label for="n2">Gebe zweite Zahl ein</label>
+              <input type="text" id="n2" class="form-control" />
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-2">
+                  <label>Rechenzeichen</label> <br>
+                  <select id="op" class="custom-select">
+                      <option value="+">+</option>
+                      <option value="-">-</option>
+                      <option value="/">/</option>
+                      <option value="*">*</option>
+                  </select>
+
+                  </div>
+                  <div class="col-xs-2">
+                    <label>Die Lösung ist:</label>
+                    <input type="text" class="form-control" readonly id="res">
+                  </div>
+                    <div class="col-xs-1">
+                      <label>Berechne!</label>
+                      <button class="btn btn-info" onclick="complexCalc();">CALC!</button>
+                </div>
+              </div>
+      </div>
+
+
+<body>
+
+
 
 </html>

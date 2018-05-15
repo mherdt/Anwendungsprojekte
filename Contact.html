@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/clock.js"></script>
       <link rel="icon" href="Logo.png">
 
 </head>
@@ -24,32 +25,52 @@
 .container {
   background-color: white;
 }
-.medium {
-  background-color: white;
-}
+  #clockCol {
+    text-align: right;
+  }
+
+  #clock {
+    font-family: digital;
+    font-size: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+    border: darkgray 1px solid;
+    border-radius: 10px;
+  }
+
+    #logo {
+      height:50px;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
 </style>
 
 <body>
 
   <body background="background.jpg">
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="Home.html">Black Holes</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="History.html">History</a></li>
-          <li><a href="Hawking.html">Hawking</a></li>
-          <li class="active"><a href="Contact.html">Contact</a></li>
-          <li><a href="Calculator.html">Calculator</a></li>
-          <li><a href="House.html">House</a></li>
-          <li><a href="About.html">About us</a></li>
-        </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
       </div>
-    </nav>
-
+      <ul class="nav navbar-nav">
+        <li><img id="logo" src="Logo.png" href="Home.html" alt="Black Hole"></li>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="History.html">History</a></li>
+        <li><a href="Hawking.html">Hawking</a></li>
+        <li class="active"><a href="Contact.html">Contact</a></li>
+        <li><a href="Calculator.html">Calculator</a></li>
+        <li><a href="House.html">House</a></li>
+        <li><a href="About.html">About us</a></li>
+      </ul>
+      <div id="clockCol" class="col">
+        <div id="clock">
+          <span id="hours">00</span><span>:</span><span id="minutes">00</span>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 <div class="container">
   <div style="text-align:center">

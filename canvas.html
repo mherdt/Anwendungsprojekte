@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Anwendungsprojekte</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/clock_with_canvas.js"></script>
+
+</head>
+
+<style>
+.mySlides {
+
+ display: block;
+ margin: 0px auto;
+ width: 100px;
+}
+
+.container {
+  background-color: white;
+}
+.medium {
+  background-color: white;
+}
+
+#canvasCol {
+  text-align: center;
+}
+#clockCol {
+  text-align: right;
+}
+
+#clock {
+  font-family: digital;
+  font-size: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: inline-block;
+  border: darkgray 1px solid;
+  border-radius: 10px;
+}
+#canvas {
+  border: 1px solid #000000;
+  width: 100%;
+  max-width: 800px;
+}
+#logo {
+  height:50px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+</style>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+      <ul class="nav navbar-nav">
+        <li><img id="logo" src="Logo.png" alt="Black Hole"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="hawking.html">Hawking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="calculator.html">Komplex</a></li>
+        <li><a href="factorial.html">Fakultät</a></li>
+        <li class="active"><a href="canvas.html">Canvas</a></li>
+        <li><a href="about.html">About us</a></li>
+      </ul>
+      <div id="clockCol" class="col">
+        <div id="clock">
+          <span id="hours">00</span><span>:</span><span id="minutes">00</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <div class="container">
+      <h2 class="wide">HTML 5 Canvas</h2>
+      <div class="col">
+        <p class="opacity"><i>My house before a black hole will hfisuladfhdisufhsdaufhi it.</i></p>
+      </div>
+      <div class="row">
+        <div id="canvasCol" class="col">
+          <canvas id="canvas" width="1000" height="1000"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  </html>

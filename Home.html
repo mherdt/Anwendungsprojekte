@@ -1,3 +1,4 @@
+
 <html>
 <meta charset="UTF-8">
 <head>
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/clock.js"></script>
 <link rel="icon" href="Logo.png">
 </head>
 
@@ -25,6 +27,20 @@
 .medium {
   background-color: white;
 }
+ #clockCol {
+            text-align: right;
+        }
+
+ #clock {
+            font-family: digital;
+            font-size: 1.5vw;
+            padding-left: 50px;
+            padding-right: 50px;
+            display: inline-block;
+            border: darkgray 1px solid;
+            border-radius: 10px;
+        }
+
 </style>
 <body>
 
@@ -45,8 +61,12 @@
       <li><a href="Contact.html">Contact</a></li>
       <li><a href="Calculator.html">Calculator</a></li>
       <li><a href="House.html">House</a></li>
-
     </ul>
+   <div id="clockCol" class="col">
+                <div id="clock">
+                    <span id="hours">00</span><span>:</span><span id="minutes">00</span>
+                </div>
+  </div>
   </div>
 </nav>
 

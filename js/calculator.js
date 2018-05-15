@@ -1,58 +1,96 @@
-class ComplexNumber {
-    constructor(realPart, imaginaryPart) {
-        this.realPart = realPart;
-        this.imaginaryPart = imaginaryPart;}
-
-    plus(number) {
-        var realPart = this.realPart + number.realPart;
-        var imaginaryPart = this.imaginaryPart + number.imaginaryPart;
-        return new ComplexNumber(realPart, imaginaryPart);}
-
-    minus(number) {
-        var realPart = this.realPart - number.realPart;
-        var imaginaryPart = this.imaginaryPart - number.imaginaryPart;
-        return new ComplexNumber(realPart, imaginaryPart);}
-
-    multiply(number) {
-        var realPart = this.realPart * number.realPart - this.imaginaryPart * number.imaginaryPart;
-        var imaginaryPart = this.realPart * number.imaginaryPart + this.imaginaryPart * number.realPart;
-        return new ComplexNumber(realPart, imaginaryPart);}
-
-    divide(number) {
-        var denom = number.realPart * number.realPart + number.imaginaryPart * number.imaginaryPart;
-        var realPart = (this.realPart * number.realPart + this.imaginaryPart * number.imaginaryPart) / (number.realPart * number.realPart + number.imaginaryPart * number.imaginaryPart) ;
-        var imaginaryPart = (this.imaginaryPart * number.realPart - this.realPart * number.imaginaryPart) / (number.realPart * number.realPart + number.imaginaryPart * number.imaginaryPart);
-        return new ComplexNumber(realPart, imaginaryPart);}
-
-    show() {
-        if (this.imaginaryPart == 0) {
-            return this.realPart.show();}
-        else if (this.realPart == 0) {
-            if (this.imaginaryPart < 0) {
-                return this.imaginaryPart === -1 ? "-i" : this.imaginaryPart + "i";}
-            return this.imaginaryPart === 1 ? "i" : this.imaginaryPart + "i";}
-        else if (this.imaginaryPart < 0) {return this.realPart + " - " + (this.imaginaryPart === -1 ? "i" : Math.abs(this.imaginaryPart) + "i");}
-        return this.realPart + " + " + (this.imaginaryPart === 1 ? "i" : this.imaginaryPart + "i");}
-
-    static reg(string) {
-        var regExp = /^([-+]?\d+(?:\.\d+)?(?!i))?([-+]?(?:\d+(?:\.\d+)?)?i)?$/;
-        var a = regExp.exec(string);
-        var realPart = a[1] ? parseFloat(a[1]) : 0;
-        var imaginaryPart;
-        if (a[2] === "+i" || a[2] === "i") {imaginaryPart = 1;}
-        else if (a[2] === "-i") {imaginaryPart = -1;}
-        else {imaginaryPart = a[2] ? parseFloat(a[2].replace("i"), "") : 0;}
-        return new ComplexNumber(realPart, imaginaryPart);
-    }
-
+function init() {
+  document.getElementById("add").checked = true;
+  document.getElementById('additionImg').style.display = 'block';
 }
-function complexCalc() {
-        var n1 = ComplexNumber.reg(document.getElementById("n1").value.replace(",", "."));
-        var n2 = ComplexNumber.reg(document.getElementById("n2").value.replace(",", "."));
-        var operator = document.getElementById("op").value;
+window.onload = init;
 
-        if (operator === "+") {document.getElementById("res").value = n1.plus(n2).show();}
-        else if (operator === "-") {document.getElementById("res").value = n1.minus(n2).show();}
-        else if (operator === "/") {document.getElementById("res").value = n1.divide(n2).show();}
-        else if (operator === "*") {document.getElementById("res").value = n1.multiply(n2).show();}
+function calc() {
+  //Get state of radiobutton
+  var additionIsSelected = document.getElementById("add").checked;
+  var substractionIsSelected = document.getElementById("sub").checked;
+  var multiplyIsSelected = document.getElementById("mul").checked;
+  var divisionIsSelected = document.getElementById("div").checked;
+
+  //Get entered values
+  var realNumber1 = parseFloat(document.getElementById("r1").value);
+  var imaginaryNumber1 = parseFloat(document.getElementById("i1").value);
+  var realNumber2 = parseFloat(document.getElementById("r2").value);
+  var imaginaryNumber2 = parseFloat(document.getElementById("i2").value);
+
+  //Set empty inputfiels to 0
+  if (isNaN(realNumber1)) {
+    realNumber1 = 0;
+    document.getElementById("r1").value = 0;
+  }
+  if (isNaN(imaginaryNumber1)) {
+    imaginaryNumber1 = 0;
+    document.getElementById("i1").value = 0;
+  }
+  if (isNaN(realNumber2)) {
+    realNumber2 = 0;
+    document.getElementById("r2").value = 0;
+  }
+  if (isNaN(imaginaryNumber2)) {
+    imaginaryNumber2 = 0;
+    document.getElementById("i2").value = 0;
+  }
+
+
+  //Addition
+  var result;
+  if (additionIsSelected) {
+    var rn = realNumber1 + realNumber2;
+    var im = imaginaryNumber1 + imaginaryNumber2;
+    var operator
+    if (im < 0) {
+      operator = "";
+    } else {
+      operator = "+";
+    }
+    result = "" + rn + operator + im + "i";
+    document.getElementById("answer").value = result;
+  }
+  //Substraction
+  if (substractionIsSelected) {
+    var rn = realNumber1 - realNumber2;
+    var im = imaginaryNumber1 - imaginaryNumber2;
+    var operator
+    if (im < 0) {
+      operator = "";
+    } else {
+      operator = "+";
+    }
+    result = "" + rn + operator + im + "i";
+    document.getElementById("answer").value = result;
+  }
+  //Multiplication
+  if (multiplyIsSelected == true) {
+    var rn = (realNumber1 * realNumber2) - (imaginaryNumber1 * imaginaryNumber2);
+    var im = (realNumber1 * imaginaryNumber2) + (realNumber2 * imaginaryNumber1);
+    var operator
+    if (im < 0) {
+      operator = "";
+    } else {
+      operator = "+";
+    }
+    result = "" + rn + operator + im + "i";
+    document.getElementById("answer").value = result;
+  }
+  //Division
+  if (divisionIsSelected == true) {
+    var rn = ((realNumber1 * realNumber2) + (imaginaryNumber1 * imaginaryNumber2)) / (realNumber2 * realNumber2 + imaginaryNumber2 * imaginaryNumber2);
+    var im = (-1 * (realNumber1 * imaginaryNumber2) + (realNumber2 * imaginaryNumber1)) / (realNumber2 * realNumber2 + imaginaryNumber2 * imaginaryNumber2);
+    var operator
+    if (im < 0) {
+      operator = "";
+    } else {
+      operator = "+";
+    }
+    result = "" + rn + operator + im + "i";
+    if (!isNaN(rn) && !isNaN(im)) {
+      document.getElementById("answer").value = result;
+    } else {
+      document.getElementById("answer").value = "Man kann nicht durch 0 teilen!"
+    }
+  }
 }

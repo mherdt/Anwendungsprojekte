@@ -53,50 +53,91 @@
   </div>
 </nav>
 
-<body background="background.jpg">
-  <div class="container">
-    <div class="form-group row">
-      <div class="col-md-6">
-        <h1>Rechnen mit komplexen Zahlen</h1>
-        <span>(Zahlen müssen in diesem Format angegeben werden: 7+15i)
+<body background="background.jpg" ng-controller="myCtrl">
+
+  <div class="album bg-light mt-2">
+    <div class="container text-center">
+      <h2 class="pt-4">Rechner für komplexe Zahlen</h2>
+
+    </div>
+
+    <div align="" class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="r1">Reeler Anteil 1: </label>   <input type="number" class="form-control" id="r1">
           </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="i1">Imaginärer Anteil 1:</label>   <input type="number" class="form-control" id="i1">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="r2">Reeler Anteil 2: </label>   <input type="number" class="form-control" id="r2">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="i2">Imaginärer Anteil 2:</label>   <input type="number" class="form-control" id="i2">
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>Operator</label>
+            <form>
+              <label class="radio-inline">
+  		  <input type="radio" name="optradio" id="add"> Addition
+  		</label>
+              <label class="radio-inline">
+  		  <input type="radio" name="optradio" id="sub"> Subtraktion
+  		</label>
+              <label class="radio-inline">
+  		  <input type="radio" name="optradio" id="mul"> Multiplikation
+  		</label>
+              <label class="radio-inline">
+  		  <input type="radio" name="optradio" id="div"> Division
+  		</label>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <fieldset disabled>
+            <div class="form-group">
+              <label for="answer">Ergebnis:</label>   <input type="text" class="form-control" id="answer">
+            </div>
+          </fieldset>
+        </div>
+        <div class="col align-self-center">
+          <button type="button" class="btn btn-info" id="buttonCalculate" onclick="calc()">Berechnen</button>
+        </div>
       </div>
     </div>
-    <div id = "map" class="container">
-      <div class="form-group row">
-          <div class="col-xs-2">
-              <label for="n1">Gebe erste Zahl ein</label>
-              <input type="text" id="n1" class="form-control"/>
-          </div>
-          <div class="col-xs-2">
-              <label for="n2">Gebe zweite Zahl ein</label>
-              <input type="text" id="n2" class="form-control" />
-          </div>
-          </div>
-          <div class="row">
-              <div class="col-xs-2">
-                  <label>Rechenzeichen</label> <br>
-                  <select id="op" class="custom-select">
-                      <option value="+">+</option>
-                      <option value="-">-</option>
-                      <option value="/">/</option>
-                      <option value="*">*</option>
-                  </select>
+  </div>
+  </div>
+  </div>
 
-                  </div>
-                  <div class="col-xs-2">
-                    <label>Die Lösung ist:</label>
-                    <input type="text" class="form-control" readonly id="res">
-                  </div>
-                    <div class="col-xs-1">
-                      <label>Berechne!</label>
-                      <button class="btn btn-info" onclick="complexCalc();">CALC!</button>
-                </div>
-              </div>
-      </div>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
 
+      </p>
 
-<body>
+    </div>
+  </footer>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="tether/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
 
 
 

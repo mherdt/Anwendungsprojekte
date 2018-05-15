@@ -1,5 +1,4 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -9,35 +8,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="icon" href="Logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="icon" href="Logo.png">
 
 </head>
 
-<style>
-.mySlides {
 
-   display: block;
-   margin: 0px auto;
-   width: 100px;
-  }
-
-.container {
-  background-color: white;
-}
-.medium {
-  background-color: white;
-}
-</style>
-
-<body>
 
   <body background="background.jpg">
 
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div ng-app="myApp" ng-controller="formCtrl">
+        <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="Home.html">Black Holes</a>
         </div>
+
         <ul class="nav navbar-nav">
           <li><a href="Home.html">Home</a></li>
           <li><a href="History.html">History</a></li>
@@ -47,7 +33,9 @@
           <li><a href="House.html">House</a></li>
           <li><a href="About.html">About us</a></li>
         </ul>
+
       </div>
+    </div>
     </nav>
 
 
@@ -56,31 +44,44 @@
     <h2>Kontaktiere uns</h2>
     <p>Hinterlasse uns eine Nachricht:</p>
   </div>
-  <div class="row">
-    <div class="column">
-      <div><img src="schwarzesLoch4.jpg" alt="BlackHole" height="87%" width="100%"></div>
-    </div>
-    <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">Vorname</label>
-        <input type="text" id="fname" name="Vorname" placeholder="Ihr Vorname...">
-        <label for="lname">Nachname</label>
-        <input type="text" id="lname" name="Nachname" placeholder="Ihr Nachname...">
-        <label for="country">Land</label>
-        <select id="country" name="Land">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-          <option value ="germany">Deutschland</option>
+  <div ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+      First Name:<br>
+      <input type="text" ng-model="user.Vorname"><br>
+      Last Name:<br>
+      <input type="text" ng-model="user.Nachname"><br>
+      Geburtsdatum:<br>
+      <input type="date" ng-model="user.Geburtsdatum"><br>
+      Schule:<br>
+      <input type="text" ng-model="user.Schule"><br>
+      Universitaet:<br>
+      <input type="text" ng-model="user.Universitaet"><br>
+      Praktika:<br>
+      <input type="text" ng-model="user.Praktika"><br>
+      Berufserfahrung:<br>
+      <input type="text" ng-model="user.Berufserfahrung"><br>
+      Skills:<br>
+      <input type="text" ng-model="user.Skills"><br>
 
-        </select>
-        <label for="subject">Nachricht</label>
-        <textarea id="subject" name="subject" placeholder="Schreibe uns etwas..." style="height:170px"></textarea>
-        <input type="submit" value="Abschicken">
-      </form>
+      <br><br>
+      <button ng-click="reset()">RESET</button>
+    </form>
+    <p>form = {{user}}</p>
+
     </div>
   </div>
-</div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('formCtrl', function($scope) {
+      $scope.master = {Vorname:"John", Nachname:"Doe"};
+      $scope.reset = function() {
+          $scope.user = angular.copy($scope.master);
+      };
+      $scope.reset();
+  });
+  </script>
+
+
 
 </body>
 <style>
@@ -95,17 +96,6 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
 
 /* Style the container/contact section */
 .container {
@@ -135,6 +125,26 @@ input[type=submit]:hover {
         width: 100%;
         margin-top: 0;
     }
-}
+  }
+    .mySlides {
+
+       display: block;
+       margin: 0px auto;
+       width: 100px;
+      }
+
+    .container {
+      background-color: white;
+    }
+    .medium {
+      background-color: white;
+    }
+    .nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+    </style>
+
 </body>
 </html>

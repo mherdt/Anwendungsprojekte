@@ -43,8 +43,8 @@
 
 <div class="container">
   <div style="text-align:center">
-    <h2>Kontaktiere uns</h2>
-    <p>Hinterlasse uns eine Nachricht:</p>
+    <h2>Steckbrief</h2>
+    <p>Hier wird ein individueller Steckbrief erstellt:</p>
   </div>
   <div ng-app="myApp" ng-controller="formCtrl">
     <form novalidate>
@@ -52,30 +52,32 @@
       <input type="text" ng-model="user.Vorname"><br>
       Last Name:<br>
       <input type="text" ng-model="user.Nachname"><br>
-      Geburtsdatum:<br>
-      <input type="date" ng-model="user.Geburtsdatum"><br>
+      Geburtsjahr:<br>
+      <input type="text" ng-model="user.Geburtsjahr"><br>
+      Geburtsort:<br>
+      <input type="text" ng-model="user.Geburtsort"><br>
       Schule:<br>
       <input type="text" ng-model="user.Schule"><br>
+      Abschlussjahr:<br>
+      <input type="text" ng-model="user.Abschlussjahr"><br>
       Universitaet:<br>
       <input type="text" ng-model="user.Universitaet"><br>
-      Praktika:<br>
-      <input type="text" ng-model="user.Praktika"><br>
-      Berufserfahrung:<br>
-      <input type="text" ng-model="user.Berufserfahrung"><br>
-      Skills:<br>
-      <input type="text" ng-model="user.Skills"><br>
+      Hobbies:<br>
+      <input type="text" ng-model="user.Hobbies"><br>
+      Gröster Wunsch:<br>
+      <input type="text" ng-model="user.Wunsch"><br>
 
       <br><br>
       <button ng-click="reset()">RESET</button>
     </form>
-    <p>form = {{user}}</p>
+    <h2><p>Die Person {{user.Vorname}} {{user.Nachname}} wurde im Jahr {{user.Geburtsjahr}} in {{user.Geburtsort}} geboren und besuchte die {{user.Schule}}. {{user.Vorname}} machte im Jahr {{user.Abschlussjahr}} den Abschluss und studiert nun an der {{user.Universitaet}}. Freizeitlich betreibt {{user.Vorname}} gerne {{user.Hobbies}}, ziemlich cool! {{user.Vorname}}'s größter Wunsch ist {{user.Wunsch}}. </p></h2>
 
     </div>
   </div>
   <script>
   var app = angular.module('myApp', []);
   app.controller('formCtrl', function($scope) {
-      $scope.master = {Vorname:"John", Nachname:"Doe"};
+
       $scope.reset = function() {
           $scope.user = angular.copy($scope.master);
       };
@@ -91,7 +93,7 @@
 /* Style inputs */
 input[type=text], select, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 5px;
     border: 1px solid #ccc;
     margin-top: 6px;
     margin-bottom: 16px;
@@ -107,19 +109,8 @@ input[type=text], select, textarea {
 }
 
 /* Create two columns that float next to eachother */
-.column {
-    float: left;
-    width: 50%;
-    margin-top: 6px;
-    padding: 20px;
-}
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {

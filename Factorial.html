@@ -89,6 +89,7 @@
             <label for="answer">Ergebnis:</label>   <input type="text" class="form-control" id="answer">
           </div>
         </fieldset>
+        <br>
       </div>
       <button type="button" class="btn btn-info" id="buttonCalculate" onclick="factorial()">Berechnen</button>
     </div>
@@ -97,8 +98,8 @@
         var result;
         var num = parseFloat(document.getElementById("fak").value);
         if (num < 0) {
-          result = -1;
-          document.getElementById("answer").value = result;
+          alert("negative Zahl!");
+          return;
         } else if (num == 0) {
           result = 1;
           document.getElementById("answer").value = result;

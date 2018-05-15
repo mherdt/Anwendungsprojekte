@@ -1,0 +1,114 @@
+<html>
+
+<head>
+
+  <title>Anwendungsprojekte</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/clock.js"></script>
+  <link rel="icon" href="Logo.png">
+</head>
+
+<style>
+  .mySlides {
+
+    display: block;
+    margin: 0px auto;
+    width: 100px;
+  }
+
+  .container {
+    background-color: white;
+  }
+
+  .medium {
+    background-color: white;
+  }
+
+  #clockCol {
+    text-align: right;
+  }
+
+  #clock {
+    font-family: digital;
+    font-size: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+    border: darkgray 1px solid;
+    border-radius: 10px;
+  }
+
+  #logo {
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+</style>
+
+<body>
+
+  <body background="background.jpg">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
+        <ul class="nav navbar-nav">
+          <li><img id="logo" src="Logo.png" alt="Black Hole"></li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="History.html">History</a></li>
+          <li><a href="Hawking.html">Hawking</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Calculator.html">Calculator</a></li>
+          <li class="active"><a href="Factorial.html">Fakultät</a></li>
+          <li><a href="House.html">House</a></li>
+          <li><a href="About.html">About us</a></li>
+        </ul>
+        <div id="clockCol" class="col">
+          <div id="clock">
+            <span id="hours">00</span><span>:</span><span id="minutes">00</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="height:20%">
+      <h2>Fakultät</h2>
+      <div class="row">
+        <div class="col-xs-2">
+          <label for="fak">Gebe eine Zahl ein: </label><input type="number" class="form-control" id="fak">
+        </div>
+      </div>
+      <div class="row">
+        <fieldset disabled>
+          <div class="col-xs-2">
+            <label for="answer">Ergebnis:</label>   <input type="text" class="form-control" id="answer">
+          </div>
+        </fieldset>
+      </div>
+      <button type="button" class="btn btn-info" id="buttonCalculate" onclick="factorial()">Berechnen</button>
+    </div>
+    <script>
+      function factorial(num) {
+        var result;
+        var num = parseFloat(document.getElementById("fak").value);
+        if (num < 0) {
+          result = -1;
+          document.getElementById("answer").value = result;
+        } else if (num == 0) {
+          result = 1;
+          document.getElementById("answer").value = result;
+        }
+        var tmp = num;
+        while (num-- > 2) {
+          tmp *= num;
+        }
+        document.getElementById("answer").value = tmp;
+      }
+    </script>
+
+</html>

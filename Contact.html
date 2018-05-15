@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <title>Anwendungsprojekte</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="js/clock.js"></script>
-    <link rel="icon" href="Logo.png">
+  <title>Anwendungsprojekte</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="js/clock.js"></script>
+  <link rel="icon" href="Logo.png">
 
 </head>
 
 
 
-  <body background="background.jpg">
+<body background="background.jpg">
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
       </div>
@@ -41,103 +42,103 @@
   </nav>
 
 
-<div class="container">
-  <div style="text-align:center">
-    <h2>Steckbrief</h2>
-    <p>Hier wird ein individueller Steckbrief erstellt:</p>
-  </div>
-  <div ng-app="myApp" ng-controller="formCtrl">
-    <form novalidate>
-      First Name:<br>
-      <input type="text" ng-model="user.Vorname"><br>
-      Last Name:<br>
-      <input type="text" ng-model="user.Nachname"><br>
-      Geburtsjahr:<br>
-      <input type="text" ng-model="user.Geburtsjahr"><br>
-      Geburtsort:<br>
-      <input type="text" ng-model="user.Geburtsort"><br>
-      Schule:<br>
-      <input type="text" ng-model="user.Schule"><br>
-      Abschlussjahr:<br>
-      <input type="text" ng-model="user.Abschlussjahr"><br>
-      Universitaet:<br>
-      <input type="text" ng-model="user.Universitaet"><br>
-      Hobbies:<br>
-      <input type="text" ng-model="user.Hobbies"><br>
-      Gröster Wunsch:<br>
-      <input type="text" ng-model="user.Wunsch"><br>
+  <div class="container">
+    <div style="text-align:center">
+      <h2>Steckbrief</h2>
+      <p>Hier wird ein individueller Steckbrief erstellt:</p>
+    </div>
+    <div ng-app="myApp" ng-controller="formCtrl">
+      <form novalidate>
+        First Name:<br>
+        <input type="text" ng-model="user.Vorname"><br> Last Name:<br>
+        <input type="text" ng-model="user.Nachname"><br> Geburtsjahr:
+        <br>
+        <input type="text" ng-model="user.Geburtsjahr"><br> Geburtsort:
+        <br>
+        <input type="text" ng-model="user.Geburtsort"><br> Schule:
+        <br>
+        <input type="text" ng-model="user.Schule"><br> Abschlussjahr:
+        <br>
+        <input type="text" ng-model="user.Abschlussjahr"><br> Universitaet:
+        <br>
+        <input type="text" ng-model="user.Universitaet"><br> Hobbies:
+        <br>
+        <input type="text" ng-model="user.Hobbies"><br> Gröster Wunsch:<br>
+        <input type="text" ng-model="user.Wunsch"><br>
 
-      <br><br>
-      <button ng-click="reset()">RESET</button>
-    </form>
-    <h2><p>Die Person {{user.Vorname}} {{user.Nachname}} wurde im Jahr {{user.Geburtsjahr}} in {{user.Geburtsort}} geboren und besuchte die {{user.Schule}}. {{user.Vorname}} machte im Jahr {{user.Abschlussjahr}} den Abschluss und studiert nun an der {{user.Universitaet}}. Freizeitlich betreibt {{user.Vorname}} gerne {{user.Hobbies}}, ziemlich cool! {{user.Vorname}}'s größter Wunsch ist {{user.Wunsch}}. </p></h2>
+        <br><br>
+        <button ng-click="reset()">RESET</button>
+      </form>
+      <h2><p>Die Person {{user.Vorname}} {{user.Nachname}} wurde im Jahr {{user.Geburtsjahr}} in {{user.Geburtsort}} geboren und besuchte die {{user.Schule}}. {{user.Vorname}} machte im Jahr {{user.Abschlussjahr}} den Abschluss und studiert nun an der {{user.Universitaet}}. Freizeitlich betreibt {{user.Vorname}} gerne {{user.Hobbies}}, ziemlich cool! {{user.Vorname}}'s größter Wunsch ist {{user.Wunsch}}. </p></h2>
 
     </div>
   </div>
   <script>
-  var app = angular.module('myApp', []);
-  app.controller('formCtrl', function($scope) {
+    var app = angular.module('myApp', []);
+    app.controller('formCtrl', function($scope) {
 
       $scope.reset = function() {
-          $scope.user = angular.copy($scope.master);
+        $scope.user = angular.copy($scope.master);
       };
       $scope.reset();
-  });
+    });
   </script>
 
 
 
 </body>
 <style>
+  /* Style inputs */
 
-/* Style inputs */
-input[type=text], select, textarea {
+  input[type=text],
+  select,
+  textarea {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-}
+  }
 
 
-/* Style the container/contact section */
-.container {
+  /* Style the container/contact section */
+
+  .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
-}
+  }
 
-/* Create two columns that float next to eachother */
+  /* Create two columns that float next to eachother */
 
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
+  @media screen and (max-width: 600px) {
+    .column,
+    input[type=submit] {
+      width: 100%;
+      margin-top: 0;
     }
   }
-    .mySlides {
 
-       display: block;
-       margin: 0px auto;
-       width: 100px;
-      }
+  .mySlides {
 
-    .container {
-      background-color: white;
-    }
-    .medium {
-      background-color: white;
-    }
-    .nav {
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-    }
-     #clockCol {
+    display: block;
+    margin: 0px auto;
+    width: 100px;
+  }
+
+  .container {
+    background-color: white;
+  }
+
+  .medium {
+    background-color: white;
+  }
+
+
+  #clockCol {
     text-align: right;
   }
 
@@ -151,12 +152,13 @@ input[type=text], select, textarea {
     border-radius: 10px;
   }
 
-    #logo {
-      height:50px;
+  #logo {
+    height: 50px;
     padding-left: 5px;
     padding-right: 10px;
   }
-    </style>
+</style>
 
 </body>
+
 </html>

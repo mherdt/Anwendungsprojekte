@@ -1,0 +1,94 @@
+<html>
+<head>
+
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="icon" href="Logo.png">
+</head>
+
+<style>
+
+.mySlides {
+
+   display: block;
+   margin: 0px auto;
+   width: 100px;
+  }
+
+.container {
+  background-color: white;
+}
+.medium {
+  background-color: white;
+}
+</style>
+
+<body>
+
+  <body background="background.jpg">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="Home.html">Black Holes</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="History.html">History</a></li>
+          <li class="active"><a href="Hawking.html">Hawking</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Calculator.html">Calculator</a></li>
+          <li><a href="House.html">House</a></li>
+
+        </ul>
+      </div>
+    </nav>
+<!-- Slide Show -->
+<p><section>
+  <a href="hawking.jpg" onclick="FensterOeffnen(this.href); return false" ><img class="mySlides" style="width:30%" src="hawking.jpg"/></a>
+
+</section>
+</p>
+<!-- Description -->
+<div>
+
+  <section class="container" style="max-width:600px">
+  <h2 class="wide">Stephen Hawking</h2>
+  <p><i>und sein Lebenswerk</i></p>
+  <p>Manchmal hat ein Wissenschaftler das Glück (oder sollte man es Schicksal nennen?), schon in jungen Jahren auf ein Thema zu stoßen, das ihn sein gesamtes Forscherleben lang nicht mehr loslässt. Stephen Hawking ist es so mit den Schwarzen Löchern ergangen, mit denen sein Name für immer verbunden sein wird.
+
+Weder kann man von Hawkings Leben berichten, ohne diese rätselhaften Objekte zu erwähnen - noch kann irgendjemand ernsthaft über Schwarze Löcher nachdenken, ohne sich dabei auch mit Hawkings Erkenntnissen auseinanderzusetzen.
+Ein Loch in der Raumzeit, dem nichts entkommen kann
+Schwarze Löcher entstehen unter anderem, wenn schwere Sterne mit einem Vielfachen der Masse der Sonne ihren Brennstoff aufgebraucht haben und unter dem Druck der Gravitation in sich zusammenfallen. Alle Materie ist dann in einen einzigen Punkt von unendlicher Dichte konzentriert; eine Art Loch in der Raumzeit. Dieser Klumpen übt eine so starke Schwerkraft aus, dass ihm nichts in seiner Nähe entkommen kann, nicht einmal das Licht - daher der Name "Schwarzes Loch".
+
+Lange dachte man, dass solche Objekte nur eine mathematische Spielerei mit den Gleichungen von Einsteins Allgemeiner Relativitätstheorie seien, frei von echter Physik. Aber nach und nach verdichteten sich die Hinweise, dass Schwarze Löcher im Universum durchaus existieren.</p>
+</section>
+</div>
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+function neuesFenster (Adresse) {
+  MeinFenster = window.open(Adresse, "Zweitfenster", "width=300,height=400,left=100,top=200");
+  MeinFenster.focus();
+</script>
+
+</body>
+</html>
